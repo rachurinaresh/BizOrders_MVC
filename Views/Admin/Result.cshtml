@@ -1,0 +1,32 @@
+﻿@using BizOrders_MVC.Controllers;
+@model IEnumerable<Result>
+<h3>Order Details</h3>
+<div>
+    @{
+        var a = Model;
+    }
+    @if (a.Count() == 0)
+    {
+        <h1>No orders placed ...</h1>
+    }
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="w-50">
+            @foreach (var item in Model)
+            {
+                <ul>
+                    <li>Customer Name : @item.CustomerName</li>
+                    <li>Customer Id : @item.CustomerId</li>
+                    <li>Order Id : @item.OrderId</li>
+                    <li>Prime start date : @item.StartDate</li>
+                    <li>Prime end date : @item.EndDate</li>
+                    <li>No of items placed : @item.NoOfItems</li>
+                    <li>Payable amount : @item.PayableAmount</li>
+                </ul>
+                <div></div>
+            }
+        </div>
+        <div class="w-50 d-flex justify-content-center">
+            <img src="~/Assets/BizOrders.png" class="w-100" />
+        </div>
+    </div>
+</div>

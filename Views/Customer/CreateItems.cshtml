@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1> Items Page</h1>
+@using (Html.BeginForm("PlaceOrder", "Customer", FormMethod.Post))
+{
+    <div id="customer-items-container">
+        @for (var i = 0; i < 1; i++)
+        {
+            <div id="Item-@i">
+                <div class="form-group mb-3">
+                    <label for="ItemName-@i">Name</label>
+                    <input type="text" class="form-control" id="ItemName-@i" name="ItemName" placeholder="Enter Name" required maxlength = "5">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="ItemQuantity-@i">ItemQuantity</label>
+                    <input type="number" class="form-control" id="ItemQuantity-@i" name="ItemQuantity" placeholder="Enter ItemQuantity" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="ItemPrice" -@i>ItemPrice</label>
+                    <input type="number" class="form-control" id="ItemPrice-@i" name="ItemPrice" placeholder="Enter ItemPrice" required max="10000">
+                </div>
+                <div class="ItemDiscountEligible-@i" form-group mb-3">
+                    <div>ItemDiscountEligible : </div>
+                    <label>
+                        Yes
+                        <input id="ItemDiscountEligible1-@i" name="DiscountEligible-@i" type="radio" onclick='assign("1",@i)' value="1">
+                    </label>
+                    <label>
+                        No
+                        <input id="ItemDiscountEligible1-@i" name="DiscountEligible-@i" type="radio" onclick='assign("0",@i)' value="0">
+                    </label>
+                    <input class="d-none" id="ItemDiscountEligible-@i" type="text" name="ItemDiscountEligible"/>
+                </div>
+                @if (i > 0)
+                {
+                    <a><span class="remove-btn" type="button" onclick="removeItem(@i)"><small>Remove Item</small></span></a>
+                }
+            </div>
+        }
+    </div>
+    <button class="btn-secondary btn" onclick="addItem()" type="button"><i class="fa fa-plus"></i> Add Item</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

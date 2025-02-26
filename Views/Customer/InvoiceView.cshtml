@@ -1,0 +1,33 @@
+﻿@using BizOrders_MVC.Controllers;
+@model IEnumerable<InvoicContent>;
+<h2>Order placed successfully🥳</h2>
+<ul>
+    @foreach (var std in Model)
+    {
+
+        <div>
+            <label>Name:</label>
+            <span>@std.Customerobj.CustomerName</span>
+        </div>
+        <div>Details of items Placed</div>
+        <ul>
+            @for (int i = 0; i < @std.Orderobj.NoOfItems; i++)
+            {
+                <li>
+                    ItemName : @std.items[i].ItemName
+                </li>
+                <li>
+                    ItemQuantity : @std.items[i].ItemQuantity
+                </li>
+                <li>
+                    ItemPrice : @std.items[i].ItemPrice
+                </li>
+            }
+
+        </ul>
+        <div>PackageName : @std.Orderobj.PackageName</div>
+        <div>DropAddressPinCode : @std.Orderobj.DropAddressPinCode</div>
+        <div>PaymentMode : @std.Orderobj.PaymentMode</div>
+        <div>PayableAmount : @std.Orderobj.PayableAmount</div>
+    }
+</ul>

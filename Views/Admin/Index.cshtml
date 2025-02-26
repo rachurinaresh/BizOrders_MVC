@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Welcome To Admin Page";
+}
+<h1 class="text-center mb-5">@ViewData["Title"]</h1>
+<div class="d-flex justify-content-center align-items-center">
+    <div class="w-50">
+        @using (Html.BeginForm("Result", "Admin", FormMethod.Post))
+        {
+
+            <select class="form-select mb-3" name="Choice" onchange="optionselected()" id="Choice">
+                <option selected>Open this select menu</option>
+                <option value="0">All Orders</option>
+                <option value="1">Customer Name</option>
+            </select>
+            <div id="customer-name" class="d-none mb-3">
+                <label>Enter customer name : <input type="text" name="CustomerName"></label>
+            </div>
+            <button class="btn-primary btn" type="submit">submit</button>
+        }
+    </div>
+    <div class="w-50 d-flex justify-content-center">
+        <img src="~/Assets/admin.png" class="w-50" alt="Admin"/>
+    </div>
+</div>

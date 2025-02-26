@@ -1,0 +1,71 @@
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build artifacts
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.ilk
+*.log
+*.map
+*.tlog
+*.csproj.user
+*.dbmdl
+*.sdf
+*.opensdf
+*.log
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.assets.json
+nuget.lock
+
+# ASP.NET temp files
+App_Data/
+App_Backup/
+App_Start/
+
+# Publish artifacts
+.publish/
+wwwroot/
+node_modules/
+bower_components/
+
+# Entity Framework
+Migrations/
+*.edmx.diagram
+*.edmx.sql
+
+# Logs and database files
+*.mdf
+*.ldf
+*.sqlite
+*.db
+
+# Rider / JetBrains
+.idea/
+
+# Resharper
+*.DotSettings.user
+resharper.xml
+
+# IIS config
+*.vspscc
+*.vssscc
+*.orig
+*.bak
+
+# Miscellaneous
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
